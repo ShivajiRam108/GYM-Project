@@ -109,7 +109,7 @@ const Member = () => {
       setIsSearchModeOn(true);
       await axios
         .get(
-          `http://localhost:3002/members/searched-members?searchTerm=${search}`,
+          `https://gym-be-5tmv.onrender.com/members/searched-members?searchTerm=${search}`,
           { withCredentials: true }
         )
         .then((res) => {

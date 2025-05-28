@@ -49,7 +49,7 @@ const AddMembers = () => {
   };
   const fetchMembership = async () => {
     await axios
-      .get("http://localhost:3002/plans/get-membership", {
+      .get("https://gym-be-5tmv.onrender.com/plans/get-membership", {
         withCredentials: true,
       })
       .then((res) => {
@@ -81,7 +81,7 @@ const AddMembers = () => {
     setInputField({...inputField, membership:value})
   };
   const handleRegisterBtn =async ()=>{
-    await axios.post("http://localhost:3002/members/register-member", inputField, {withCredentials:true}).then((res)=>{
+    await axios.post("https://gym-be-5tmv.onrender.com/members/register-member", inputField, {withCredentials:true}).then((res)=>{
       console.log(res);
       toast.success("Added Successfully.")
       setTimeout(() => {

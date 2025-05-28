@@ -20,7 +20,7 @@ useEffect(()=>{
 }, [])
 
 const fetMemberShip = async ()=>{
-  await axios.get('http://localhost:3002/plans/get-membership',{withCredentials:true}).then((res)=>{
+  await axios.get('https://gym-be-5tmv.onrender.com/plans/get-membership',{withCredentials:true}).then((res)=>{
     // console.log(res);
     setMembership(res.data.membership);
     setPlanMember(res.data.membership[0]._id);
@@ -31,7 +31,7 @@ const fetMemberShip = async ()=>{
 }
 
 const fetchData = async()=>{
-await axios.get(`http://localhost:3002/members/get-member/${id}`, {withCredentials:true}).then((res)=>{
+await axios.get(`https://gym-be-5tmv.onrender.com/members/get-member/${id}`, {withCredentials:true}).then((res)=>{
   console.log(res);
   setData(res.data.member)
   setStatus(res.data.member.status)
@@ -47,7 +47,7 @@ await axios.get(`http://localhost:3002/members/get-member/${id}`, {withCredentia
   let statuss = status === "Active" ? "Pending" : "Active";
   try {
     const res = await axios.post(
-      `http://localhost:3002/members/change-status/${id}`,
+      `https://gym-be-5tmv.onrender.com/members/change-status/${id}`,
       { status: statuss },
       { withCredentials: true }
     );
@@ -74,7 +74,7 @@ await axios.get(`http://localhost:3002/members/get-member/${id}`, {withCredentia
 
   // console.log(planMember);
   const handleRenewSaveBtn = async()=>{
-    await axios.put(`http://localhost:3002/members/update-member-plan/${id}`, {membership:planMember},{withCredentials:true}).then((res)=>{
+    await axios.put(`https://gym-be-5tmv.onrender.com/members/update-member-plan/${id}`, {membership:planMember},{withCredentials:true}).then((res)=>{
       console.log(res);
       setData(res.data.member)
       toast.success(res.data.message)

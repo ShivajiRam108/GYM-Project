@@ -11,7 +11,7 @@ const AddMemberShip = ({handleClose}) => {
   };
   const fetchMembership = async () => {
     await axios
-      .get("http://localhost:3002/plans/get-membership", {
+      .get("https://gym-be-5tmv.onrender.com/plans/get-membership", {
         withCredentials: true,
       })
       .then((res) => {
@@ -35,7 +35,7 @@ const AddMemberShip = ({handleClose}) => {
     }
     try {
       const res = await axios.post(
-        "http://localhost:3002/plans/add-membership",
+        "https://gym-be-5tmv.onrender.com/plans/add-membership",
         inputField,
         { withCredentials: true }
       );

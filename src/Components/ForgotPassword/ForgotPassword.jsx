@@ -28,7 +28,7 @@ const ForgotPassword = () => {
   const changePassword = async () => {
     setLoader(true);
     await axios
-      .post("http://localhost:3002/auth/reset-password/updatePassword", {
+      .post("https://gym-be-5tmv.onrender.com/auth/reset-password/updatePassword", {
         email: inputField.email,
         newPassword: inputField.newPassword,
       })
@@ -45,7 +45,7 @@ const ForgotPassword = () => {
   const verifyOtp = async () => {
     setLoader(true);
     await axios
-      .post("http://localhost:3002/auth/reset-password/verifyOtp", {
+      .post("https://gym-be-5tmv.onrender.com/auth/reset-password/verifyOtp", {
         email: inputField.email,
         otp: inputField.otp,
       })
@@ -65,7 +65,7 @@ const ForgotPassword = () => {
   const sendOtp = async () => {
     setLoader(true);
     await axios
-      .post("http://localhost:3002/auth/reset-password/sendOtp", {
+      .post("https://gym-be-5tmv.onrender.com/auth/reset-password/sendOtp", {
         email: inputField.email,
       })
       .then((res) => {
