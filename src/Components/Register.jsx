@@ -28,7 +28,7 @@ function Register({ onSwitch }) {
 
   const handleRegister = async () => {
     await axios
-      .post("http://localhost:3002/auth/register", inputField)
+      .post("https://gym-be-5tmv.onrender.com/auth/register", inputField)
       .then((res) => {
         console.log(res);
         const successMsg = res.data.message;

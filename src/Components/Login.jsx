@@ -18,7 +18,7 @@ function Login({ onSwitch }) {
     try {
       //  Step 2: Send login request
       const res = await axios.post(
-        "http://localhost:3002/auth/login",
+        "https://gym-be-5tmv.onrender.com/auth/login",
         loginField,
         { withCredentials: true }
       );

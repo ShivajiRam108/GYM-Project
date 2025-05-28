@@ -39,7 +39,7 @@ const Member = () => {
   const fetchData = async (skip, limit) => {
     await axios
       .get(
-        `http://localhost:3002/members/all-mamber?skip=${skip}&limit=${limit}`,
+        `https://gym-be-5tmv.onrender.com/members/all-mamber?skip=${skip}&limit=${limit}`,
         { withCredentials: true }
       )
 
